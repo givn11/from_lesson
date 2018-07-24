@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    /*protected $fillable = [
+    protected $fillable = [
+        'title', 'img', 'alias', 'introtext', 'text', 'user_id'
+    ];
+
+    /*protected $guarded = [
         'title'
     ];*/
-
-    protected $guarded = [
-        'title'
-    ];
 }

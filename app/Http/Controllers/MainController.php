@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
 
-    pudlic function index(){
+    public function index(){
     return view('shop.index');
 }
 }

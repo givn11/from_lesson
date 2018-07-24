@@ -7,9 +7,11 @@ Auth::routes();
 });*/
 
 //Главная
-Route::get('/', 'MainController@index');
+Route::get('/', 'MainController@index')->name('home');
 
-
+Route::group(['prefix' => 'dashboard'], function () {
+    Route::resource('/news', 'NewsController'); //
+});
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
