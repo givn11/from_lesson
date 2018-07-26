@@ -1,32 +1,39 @@
 @extends('dashboard.app')
 
 @section('content')
-    <h1>Add news</h1>
+    <h1>Добавить новость</h1>
     <hr>
 
     <form method="POST" enctype="multipart/form-data" action="{{ route('news.store') }}">
-        {{csrf_field()}}
+        {{ csrf_field() }}
         <div class="form-group">
             <label for="title">Название статьи</label>
             <input type="text" name="title" class="form-control" id="title">
         </div>
 
-            <input type="hidden" name="img" value="default.png" class="form-control" id="img">
-            <input type="hidden" name="user_id" value="1" class="form-control" id="user_id">
+        <input type="hidden" name="img" value="default.jpg" class="form-control" id="">
+
+        {{--<input type="hidden" name="user_id" value="1" class="form-control" id="">--}}
 
         <div class="form-group">
-            <label for="exampleFormControlInput1">Алиас</label>
-            <input type="text" name="alias" class="form-control" id="alias">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Вводный текст</label>
-            <input type="text" name="introtext" class="form-control" id="introtext">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Текст</label>
-            <input type="text" name="text" class="form-control" id="text">
+            <label for="alias">Картинка</label>
+            <input type="file" name="img" class="form-control" id="img">
         </div>
 
-        <buton type="submit" class="btn btn-primary btn-block float-right">Добавить</buton>
+        <div class="form-group">
+            <label for="introtext">Вводный текст</label>
+            <textarea name="introtext" class="form-control" id="introtext" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="text">Основной текст</label>
+            <textarea name="text" class="form-control" id="text" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block float-right">
+            Добавить
+        </button>
+
     </form>
+
 @endsection

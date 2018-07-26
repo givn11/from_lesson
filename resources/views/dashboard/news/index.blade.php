@@ -1,8 +1,9 @@
 @extends('dashboard.app')
 
 @section('content')
-    <h1>News list</h1>
+    <h1>Список новостей</h1>
     <hr>
+
     <table class="table">
         <thead class="thead-light">
         <tr>
@@ -13,21 +14,20 @@
         </tr>
         </thead>
         <tbody>
-
             @foreach($news as $item)
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{{$item->id}}</th>
                     <td>{{$item->img}}</td>
                     <td>{{$item->title}}</td>
                     <td><a href="#">Edit</a> | <a href="#">Удалить</a></td>
                 </tr>
-                @endforeach
-        <tr>
-            <td colspan="4">
-                <a class="btn btn-primary float-right" href="{{route('news.create')}}">Добавить новость</a>
-            </td>
-        </tr>
-
+            @endforeach
+            <tr>
+                <td colspan="4">
+                    <a class="btn btn-primary float-right" href="{{ route('news.create') }}">Добавить новость</a>
+                </td>
+            </tr>
         </tbody>
     </table>
+
 @endsection

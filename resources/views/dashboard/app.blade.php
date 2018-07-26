@@ -1,9 +1,9 @@
 <?php
 /**
-    Основной макут админ части
+ * Основной макет админ части
  */
 ?>
-        <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -22,7 +22,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <nav class="nav nav-pills flex-column flex-sm-row mt-5 md-5">
+            <nav class="nav nav-pills flex-column flex-sm-row mt-5 mb-5">
                 <a class="flex-sm-fill text-sm-center nav-link active" href="#">Active</a>
                 <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
                 <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
@@ -30,26 +30,27 @@
             </nav>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-3">
-            <ul class="list-group">
-                <div class="list-group">
-                    <a href="{{route('news.index')}}" class="list-group-item list-group-item-action active">
-                        Новости
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
-                </div>
-            </ul>
+            {{--Сайдбар--}}
+            <div class="list-group">
+                <a href="{{ route('news.index') }}" class="list-group-item list-group-item-action active">
+                    Новости
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+            </div>
+
         </div>
         <div class="col-md-9">
             @yield('content')
+            {{--Главный контент--}}
         </div>
     </div>
 </div>
-
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
