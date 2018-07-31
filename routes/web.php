@@ -10,8 +10,13 @@ Auth::routes();
 Route::get('/', 'MainController@index')->name('home');
 
 Route::group(['prefix' => 'dashboard'], function () {
+    Route::get('/', function (){
+        return view('dashboard.main');
+    });
     Route::resource('/news', 'NewsController'); //
 });
+
+Route::get('/add-to-cart/{product_id}', 'CartController@AddToCart')->name('product.add');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
